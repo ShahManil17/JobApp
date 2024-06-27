@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Manil Shah\\Work\\JobApplicationForm\\JobApplicationForm\\JobApplicationForm.csproj": {}
+    "C:\\Manil Shah\\Work\\JobApplication\\JobApplicationForm\\JobApplicationForm.csproj": {}
   },
   "projects": {
-    "C:\\Manil Shah\\Work\\JobApplicationForm\\JobApplicationForm\\JobApplicationForm.csproj": {
+    "C:\\Manil Shah\\Work\\JobApplication\\JobApplicationForm\\JobApplicationForm.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Manil Shah\\Work\\JobApplicationForm\\JobApplicationForm\\JobApplicationForm.csproj",
+        "projectUniqueName": "C:\\Manil Shah\\Work\\JobApplication\\JobApplicationForm\\JobApplicationForm.csproj",
         "projectName": "JobApplicationForm",
-        "projectPath": "C:\\Manil Shah\\Work\\JobApplicationForm\\JobApplicationForm\\JobApplicationForm.csproj",
+        "projectPath": "C:\\Manil Shah\\Work\\JobApplication\\JobApplicationForm\\JobApplicationForm.csproj",
         "packagesPath": "C:\\Users\\Manil Shah\\.nuget\\packages\\",
-        "outputPath": "C:\\Manil Shah\\Work\\JobApplicationForm\\JobApplicationForm\\obj\\",
+        "outputPath": "C:\\Manil Shah\\Work\\JobApplication\\JobApplicationForm\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -50,19 +50,23 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "Microsoft.EntityFrameworkCore": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[8.0.6, )"
+              "version": "[8.0.4, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[8.0.4, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[8.0.6, )"
+              "version": "[8.0.4, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.6, )"
+              "version": "[8.0.4, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
