@@ -22,12 +22,22 @@ function add() {
                 break;
         }
         element.children[2].value = ""
-    })
+    });
 }
 
 function storeId(id) {
     document.getElementById(`row+${id}`).style.display = 'none';
     delIds += `${id},`;
+    let ele = document.getElementById(`row+${id}`).children;
+    Array.from(ele).forEach(function (element, index) {
+        if (index == 2 || index == 3) {
+            element.children[2].value = "1970-01-01"
+        }
+        else {
+
+            element.children[2].value = ""
+        }
+    })
 }
 
 function change(id) {

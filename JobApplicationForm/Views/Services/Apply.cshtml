@@ -23,7 +23,18 @@
     <h1 class="text-center mb-5 mt-3" style="color:blueviolet">Application Form</h1>
     <br />
     <span asp-validation-summary="ModelOnly"></span>
-    <form asp-action="Apply" asp-controller="Services" method="post" onsubmit="return validate()">
+    @{
+        string action = "";
+    }
+    @if (ViewBag.UpdateFlag)
+    {
+        action = "Update";
+    }
+    else
+    {
+        action = "Apply";
+    }
+    <form asp-action="@action" asp-controller="Services" method="post" onsubmit="return validate()">
     <div class="container" id="1">
         <div class="row">
             <div class="col">
@@ -368,7 +379,7 @@
                     <div class="col text-center">
                         @if (ViewBag.UpdateFlag)
                         {
-                            @if (ViewBag.UpdateData.languages.Count > 0)
+                            @if (ViewBag.UpdateData.languages?.Count > 0)
                             {
                                 for (int i = 0; i < ViewBag.UpdateData.languages.Count; i++)
                                 {
@@ -635,7 +646,7 @@
                     <div class="col text-center">
                         @if (ViewBag.UpdateFlag)
                         {
-                            @if (ViewBag.UpdateData.technologies.Count > 0)
+                            @if (ViewBag.UpdateData.technologies?.Count > 0)
                             {
                                 for (int i = 0; i < ViewBag.UpdateData.technologies.Count; i++)
                                 {
@@ -1025,9 +1036,34 @@
             <div class="col">
                 <label for="location" class="text-primary">Prefered Location</label>
                 <select class="form-control" asp-for="Location" multiple>
-                    <option value="Sattadhar">Sattadhar</option>
-                    <option value="Sola">Sola</option>
-                    <option value="Shukan Mall">Shukan Mall</option>
+                        @if (ViewBag.UpdateFlag && ViewBag.UpdateData.preferences[0].Location.Contains("Sattadhar"))
+                        {
+                            <option value="Sattadhar" selected>Sattadhar</option>
+                        }
+                        else
+                        {
+                            <option value="Sattadhar">Sattadhar</option>
+                        }
+
+                        @if (ViewBag.UpdateFlag && ViewBag.UpdateData.preferences[0].Location.Contains("Sola"))
+                        {
+                            <option value="Sola" selected>Sola</option>
+                        }
+                        else
+                        {
+                            <option value="Sola">Sola</option>
+                        }
+
+                        @if (ViewBag.UpdateFlag && ViewBag.UpdateData.preferences[0].Location.Contains("Shukan Mall"))
+                        {
+                            <option value="Shukan Mall" selected>Shukan Mall</option>
+                        }
+                        else
+                        {
+                            <option value="Shukan Mall">Shukan Mall</option>
+                        }
+                    
+                    
                 </select>
             </div>
             <div class="col">
